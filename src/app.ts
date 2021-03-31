@@ -1,1 +1,3 @@
-console.log('TESTE');
+const main = () => undefined;
+
+main();

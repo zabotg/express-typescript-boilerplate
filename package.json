@@ -3,17 +3,12 @@
   "version": "1.0.0",
   "description": "A delightful way to building a Node.js RESTful API Services with beautiful code written in TypeScript",
   "main": "src/app.ts",
-  "scripts": {
-    "start": "yarn build && node ./dist/app.js",
-    "build": "rm -rf dist && tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "author": "Guilherme Zabot",
+  "license": "ISC",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zabotg/express-typescript-boilerplate.git"
   },
-  "author": "Guilherme Zabot",
-  "license": "ISC",
   "keywords": [
     "NodeJS",
     "TypeScript",
@@ -23,7 +18,19 @@
     "starter-kit",
     "w3tec.ch"
   ],
+  "scripts": {
+    "start": "yarn build && node ./dist/app.js",
+    "build": "rm -rf dist && tsc",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ./src --ext .ts",
+    "lint:fix": "eslint ./src --ext .ts --fix"
+  },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.20.0",
+    "@typescript-eslint/parser": "^4.20.0",
+    "eslint": "^7.23.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
     "typescript": "^4.2.3"
   }
 }
