@@ -1,0 +1,18 @@
+# package directories
+node_modules
+
+# serverless package directory
+dist
+
+# editor config
+vscode
+.vscode
+
+# some error files
+*.error
+
+# some log files
+*.log
+
+# env vars
+.env

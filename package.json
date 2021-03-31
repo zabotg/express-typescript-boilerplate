@@ -1,0 +1,29 @@
+{
+  "name": "express-typescript-boilerplate",
+  "version": "1.0.0",
+  "description": "A delightful way to building a Node.js RESTful API Services with beautiful code written in TypeScript",
+  "main": "src/app.ts",
+  "scripts": {
+    "start": "yarn build && node ./dist/app.js",
+    "build": "rm -rf dist && tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zabotg/express-typescript-boilerplate.git"
+  },
+  "author": "Guilherme Zabot",
+  "license": "ISC",
+  "keywords": [
+    "NodeJS",
+    "TypeScript",
+    "express",
+    "boilerplate",
+    "skeleton",
+    "starter-kit",
+    "w3tec.ch"
+  ],
+  "devDependencies": {
+    "typescript": "^4.2.3"
+  }
+}
