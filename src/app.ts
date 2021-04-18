@@ -1,11 +1,13 @@
 import express from "express";
 import router from "./router";
+import config from "./config";
 
 const app = express();
-const port = 3000;
 
+app.use(express.json()); //Used to parse JSON bodies
+app.use("/", express.static("public"));
 app.use("/api", router);
 
-app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`);
+app.listen(config.api.port, () => {
+    console.log(`Example app listening at http://localhost:${config.api.port}`);
 });
