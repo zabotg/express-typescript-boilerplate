@@ -11,8 +11,8 @@ export interface AuthenticationToken {
     readonly expiresIn: string;
 }
 
-const validateToken = (token?: string): any => {
-    const bearerToken = token && token.split(" ")[1];
+const validateToken = (authHeader?: string): any => {
+    const bearerToken = authHeader && authHeader.split(" ")[1];
     let userLogged = undefined;
 
     jwt.verify(
@@ -29,15 +29,15 @@ const validateToken = (token?: string): any => {
 
 const middleware = (
     request: Request,
-    resopnse: Response,
+    response: Response,
     next: NextFunction
 ): void => {
     if (!publicEndpoints.includes(request.url)) {
-        const authHeader = request.headers["authorization"];
+        const authHeader = request.headers.authorization;
         const user = validateToken(authHeader);
 
         if (!user) {
-            resopnse.status(403).json({ message: "Unauthorized access" });
+            response.status(403).json({ message: "Unauthorized access" });
             return;
         }
         // @ts-ignore
